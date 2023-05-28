@@ -1,0 +1,16 @@
+const rawValues = payload.find(item => item.variable === "payload");
+
+if (rawValues){
+  const splitValues=rawValues.value.split(`,`);
+  const wifirssi=splitValues[0];
+  const tempC=splitValues[1];
+  const hum=splitValues[2];
+  const lum=splitValues[3];
+  const pres=splitValues[4];
+
+  payload.push(wifirssi);
+  payload.push(tempC);
+  payload.push(hum);
+  payload.push(lum);
+  payload.push(pres);
+}
